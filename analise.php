@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 $file = $_FILES["file"];
 $data = file_get_contents($file["tmp_name"]);
@@ -22,7 +22,7 @@ $data = json_decode($data);
         function drawChart() {
             var data = google.visualization.arrayToDataTable([
                 ['Elemento', 'Valor'],
-                <?php foreach($data as $key=>$item){
+                <?php foreach ($data as $key => $item) {
                     $key++;
                     echo "['$key', $item],\n";
                 }
@@ -45,9 +45,29 @@ $data = json_decode($data);
 </head>
 
 <body>
-<div id="curve_chart" style="width: 900px; height: 500px"></div>
-
-<button><a href="index.php">Retornar pra pagina inicial</a> </button>
+    <div id="curve_chart" style="width: 900px; height: 500px"></div>
+    <div>
+        <label for="">Sequencia:</label>
+        <?php foreach ($data as $item) {
+            echo "$item; ";
+        }
+        ?>
+    </div>
+    <div>
+        <label for="">A1:</label>
+        <?php echo $data[0] ?>
+    </div>
+    <div>
+        <label for="">Quantidade:</label>
+        <?php echo count($data) ?>
+    </div>
+    <div>
+        <label for="">Somatoria:</label>
+        <?php echo array_sum($data) ?>
+    </div>
+    <div>
+        <button><a href="index.php">Retornar pra pagina inicial</a> </button>
+    </div>
 </body>
 
 </html>
