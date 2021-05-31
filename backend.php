@@ -48,4 +48,4 @@ function geraProgG($a1, $razao, $qtd)
     return json_encode($prog);
 }
 
-header("php.php");
+header("index.php");

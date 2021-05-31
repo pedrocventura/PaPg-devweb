@@ -46,6 +46,8 @@ $data = json_decode($data);
 
 <body>
 <div id="curve_chart" style="width: 900px; height: 500px"></div>
+
+<button><a href="index.php">Retornar pra pagina inicial</a> </button>
 </body>
 
 </html>
